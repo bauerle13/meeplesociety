@@ -20,7 +20,7 @@ async function main() {
   }
   const xml = await feedRes.text();
 
-  const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: "@_" });
+  const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: "@_", maxEntityCount: 10000 });
   const feed = parser.parse(xml);
 
   const rawItems = feed.rss?.channel?.item;
