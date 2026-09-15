@@ -1,0 +1,88 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rankings builder · The Meeple Society</title>
+  <link rel="stylesheet" href="{{ "/css/style.css" | relative_url }}">
+  <style>
+    .builder-layout { display: grid; grid-template-columns: 260px 1fr; gap: 1.5rem; }
+    .ranking-pick { border: var(--border); border-radius: var(--radius); background: var(--parchment); }
+    .ranking-pick button {
+      display: block; width: 100%; text-align: left; padding: 0.6rem 0.8rem;
+      background: none; border: none; border-bottom: 1px solid var(--parchment-soft);
+      font-family: var(--font-body); cursor: pointer; font-size: 0.9rem;
+    }
+    .ranking-pick button:hover, .ranking-pick button.active { background: rgba(227,167,43,0.15); }
+    .item-row { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid var(--parchment-soft); }
+    .item-rank { font-family: var(--font-head); font-weight: 800; color: var(--marigold); min-width: 2rem; }
+    .item-actions { display: flex; gap: 0.3rem; }
+    .item-actions button { border: var(--border); background: var(--parchment); border-radius: var(--radius); cursor: pointer; padding: 0.2rem 0.5rem; }
+    @media (max-width: 760px) { .builder-layout { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="site-logo" style="margin-bottom:1.5rem; display:block;">Meeple <span>Admin</span></div>
+      <a href="{{ "/admin/" | relative_url }}">Dashboard</a>
+      <a href="{{ "/admin/rankings-admin/" | relative_url }}" class="active">Rankings builder</a>
+      <a href="{{ "/admin/posts-admin/" | relative_url }}">Posts</a>
+      <a href="{{ "/admin/reviews-admin/" | relative_url }}">Reviews &amp; places</a>
+      <a href="{{ "/admin/tracker-admin/" | relative_url }}">Play tracker</a>
+      <a href="#" onclick="signOut(); return false;">Log out</a>
+    </aside>
+    <main class="admin-main">
+      <h2>Rankings builder</h2>
+      <button class="btn btn-primary" id="new-ranking-btn" style="margin-bottom:1.5rem;">+ New ranking</button>
+
+      <div class="builder-layout">
+        <div class="ranking-pick" id="ranking-pick-list">
+          <p style="padding:0.8rem;">Loading…</p>
+        </div>
+
+        <div id="builder-panel" style="display:none;">
+          <div class="form-field">
+            <label for="rt-title">Title</label>
+            <input type="text" id="rt-title">
+          </div>
+          <div class="form-field">
+            <label for="rt-desc">Description</label>
+            <textarea id="rt-desc" rows="2"></textarea>
+          </div>
+          <div class="form-field" style="flex-direction:row; align-items:center; gap:0.5rem;">
+            <input type="checkbox" id="rt-published" style="width:auto;">
+            <label for="rt-published" style="font-weight:500;">Published (visible on the public site)</label>
+          </div>
+          <button class="btn btn-primary" id="save-ranking-btn">Save ranking details</button>
+
+          <h3 style="margin-top:2rem;">Games in this ranking</h3>
+          <div id="items-list"></div>
+
+          <h4 style="margin-top:1.5rem;">Add a game</h4>
+          <div class="form-field">
+            <label for="game-name">Game name</label>
+            <input type="text" id="game-name" list="game-suggestions" placeholder="Start typing — creates a new game if it doesn't exist yet">
+            <datalist id="game-suggestions"></datalist>
+          </div>
+          <div class="form-field">
+            <label for="item-blurb">Blurb (optional)</label>
+            <input type="text" id="item-blurb">
+          </div>
+          <button class="btn btn-outline" id="add-item-btn">+ Add to ranking</button>
+        </div>
+
+        <div id="no-selection" style="padding:1rem;">
+          <p>Pick a ranking on the left, or create a new one, to start building.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="{{ "/js/supabase-client.js" | relative_url }}"></script>
+  <script src="{{ "/js/rankings-admin.js" | relative_url }}"></script>
+</body>
+</html>

@@ -1,11 +1,21 @@
 title: The Meeple Society
 description: Board game rankings, reviews, and a podcast.
 
+# Leave blank for the PROD site (served at the domain root).
+# The DEV repo's own _config.yml should override this to "/your-dev-repo-name"
+# if the dev site is served at username.github.io/repo-name/ rather than a
+# custom domain. Every internal link and asset path in the templates uses
+# the `relative_url` filter, which prepends this automatically — so the same
+# templates work unmodified on both environments.
+baseurl: ""
+
 # No theme, no _layouts — pages include header.html / footer.html directly.
-# Keeps GitHub Pages' built-in Jekyll processing (for {% include %}) without
-# any of Jekyll's default styling or layout system.
 markdown: kramdown
 plugins: []
+
+# Pretty URLs: every page lives at <name>/index.html so it's reachable at
+# /<name>/ with no .html in the address bar.
+permalink: pretty
 
 exclude:
   - README.md

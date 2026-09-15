@@ -1,3 +1,5 @@
+---
+---
 // Loaded via the Supabase CDN script tag (see admin pages) before this file runs.
 // Fill these in per environment — use the PROD project's URL/key on the prod
 // GitHub Pages site, and the DEV project's on the dev site. Never put the
@@ -12,7 +14,7 @@ const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 async function requireAdmin() {
   const { data: { session } } = await supabaseClient.auth.getSession();
   if (!session) {
-    window.location.href = "login.html";
+    window.location.href = "{{ "/admin/login/" | relative_url }}";
     return null;
   }
   return session;
@@ -20,5 +22,5 @@ async function requireAdmin() {
 
 async function signOut() {
   await supabaseClient.auth.signOut();
-  window.location.href = "login.html";
+  window.location.href = "{{ "/admin/login/" | relative_url }}";
 }

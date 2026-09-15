@@ -1,20 +1,22 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin dashboard · The Meeple Society</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="{{ "/css/style.css" | relative_url }}">
 </head>
 <body>
   <div class="admin-shell">
     <aside class="admin-sidebar">
       <div class="site-logo" style="margin-bottom:1.5rem; display:block;">Meeple <span>Admin</span></div>
-      <a href="index.html" class="active">Dashboard</a>
-      <a href="rankings-admin.html">Rankings builder</a>
-      <a href="posts-admin.html">Posts</a>
-      <a href="reviews-admin.html">Reviews &amp; places</a>
-      <a href="tracker-admin.html">Play tracker</a>
+      <a href="{{ "/admin/" | relative_url }}" class="active">Dashboard</a>
+      <a href="{{ "/admin/rankings-admin/" | relative_url }}">Rankings builder</a>
+      <a href="{{ "/admin/posts-admin/" | relative_url }}">Posts</a>
+      <a href="{{ "/admin/reviews-admin/" | relative_url }}">Reviews &amp; places</a>
+      <a href="{{ "/admin/tracker-admin/" | relative_url }}">Play tracker</a>
       <a href="#" onclick="signOut(); return false;">Log out</a>
     </aside>
     <main class="admin-main">
@@ -41,7 +43,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="../js/supabase-client.js"></script>
+  <script src="{{ "/js/supabase-client.js" | relative_url }}"></script>
   <script>
     requireAdmin();
   </script>

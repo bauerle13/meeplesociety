@@ -8,8 +8,8 @@
         <h1>Board games, taken seriously. Table optional.</h1>
         <p>Rankings, reviews, and a podcast from people who'd rather be shuffling a deck than doing almost anything else.</p>
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="rankings.html">See the rankings</a>
-          <a class="btn btn-outline" href="links.html">Watch &amp; listen</a>
+          <a class="btn btn-primary" href="{{ "/rankings/" | relative_url }}">See the rankings</a>
+          <a class="btn btn-outline" href="{{ "/links/" | relative_url }}">Watch &amp; listen</a>
         </div>
       </div>
       <div class="shelf">
@@ -26,7 +26,7 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Latest from the channel</h2>
-        <a href="links.html">All videos →</a>
+        <a href="{{ "/links/" | relative_url }}">All videos →</a>
       </div>
       <div class="card-grid" id="latest-videos">
         <div class="card">
@@ -42,7 +42,7 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Podcast — recent episodes</h2>
-        <a href="links.html">All episodes →</a>
+        <a href="{{ "/links/" | relative_url }}">All episodes →</a>
       </div>
       <div class="card-grid" id="latest-episodes">
         <div class="card">
@@ -58,16 +58,12 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Featured ranking</h2>
-        <a href="rankings.html">All rankings →</a>
+        <a href="{{ "/rankings/" | relative_url }}">All rankings →</a>
       </div>
       <div class="card-grid" id="featured-ranking">
-        <div class="card">
-          <div class="meta">Ranking</div>
-          <h3>Rankings built in the admin dashboard show up here</h3>
-          <p>Once the rankings builder is live, the most recent published list appears on the homepage.</p>
-        </div>
+        <div class="card"><p>Loading…</p></div>
       </div>
     </div>
   </section>
 
-{% include footer.html %}
+{% include footer.html js="supabase-client,home-featured-ranking" %}

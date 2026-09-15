@@ -5,24 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if include.title %}{{ include.title }} · The Meeple Society{% else %}The Meeple Society{% endif %}</title>
   <meta name="description" content="{% if include.description %}{{ include.description }}{% else %}Board game rankings, reviews, and a podcast for people who'd rather be at the table.{% endif %}">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{ "/css/style.css" | relative_url }}">
   {% if include.css %}
     {% assign sheets = include.css | split: "," %}
     {% for sheet in sheets %}
-      <link rel="stylesheet" href="css/{{ sheet }}.css">
+      <link rel="stylesheet" href="{{ "/css/" | append: sheet | append: ".css" | relative_url }}">
     {% endfor %}
   {% endif %}
 </head>
 <body>
   <header class="site-header">
     <div class="wrap">
-      <a class="site-logo" href="index.html">The Meeple <span>Society</span></a>
+      <a class="site-logo" href="{{ "/" | relative_url }}">The Meeple <span>Society</span></a>
       <nav class="site-nav">
-        <a href="rankings.html">Rankings</a>
-        <a href="tracker.html">Tracker</a>
-        <a href="reviews.html">Reviews</a>
-        <a href="map.html">Map</a>
-        <a href="links.html">Links</a>
+        <a href="{{ "/rankings/" | relative_url }}">Rankings</a>
+        <a href="{{ "/tracker/" | relative_url }}">Tracker</a>
+        <a href="{{ "/reviews/" | relative_url }}">Reviews</a>
+        <a href="{{ "/map/" | relative_url }}">Map</a>
+        <a href="{{ "/links/" | relative_url }}">Links</a>
       </nav>
     </div>
   </header>

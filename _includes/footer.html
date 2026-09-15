@@ -1,12 +1,12 @@
   <footer class="site-footer">
     <div class="wrap">
       <div>
-        <a class="site-logo" href="index.html">The Meeple <span>Society</span></a>
+        <a class="site-logo" href="{{ "/" | relative_url }}">The Meeple <span>Society</span></a>
         <p style="margin-top:0.5rem; font-size:0.85rem;">A show, a podcast, and a ranking system for people who take their board games seriously.</p>
       </div>
       <div class="footer-links">
-        <a href="links.html">All links</a>
-        <a href="reviews.html">Store &amp; cafe reviews</a>
+        <a href="{{ "/links/" | relative_url }}">All links</a>
+        <a href="{{ "/reviews/" | relative_url }}">Store &amp; cafe reviews</a>
         <a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a>
         <a href="#" target="_blank" rel="noopener">Merch</a>
       </div>
@@ -15,7 +15,7 @@
   {% if include.js %}
     {% assign scripts = include.js | split: "," %}
     {% for script in scripts %}
-      <script src="js/{{ script }}.js"></script>
+      <script src="{{ "/js/" | append: script | append: ".js" | relative_url }}"></script>
     {% endfor %}
   {% endif %}
 </body>
