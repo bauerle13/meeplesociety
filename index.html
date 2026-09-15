@@ -25,11 +25,7 @@
         <a href="{{ "/links/" | relative_url }}">All videos →</a>
       </div>
       <div class="card-grid" id="latest-videos">
-        <div class="card">
-          <div class="meta">Video</div>
-          <h3>New episodes sync here automatically</h3>
-          <p>This grid will populate from the YouTube sync job once it's wired up to Supabase.</p>
-        </div>
+        <div class="card"><p>Loading…</p></div>
       </div>
     </div>
   </section>
@@ -41,11 +37,7 @@
         <a href="{{ "/links/" | relative_url }}">All episodes →</a>
       </div>
       <div class="card-grid" id="latest-episodes">
-        <div class="card">
-          <div class="meta">Episode</div>
-          <h3>RSS feed will populate this section</h3>
-          <p>Pulled in on a schedule from the show's podcast feed.</p>
-        </div>
+        <div class="card"><p>Loading…</p></div>
       </div>
     </div>
   </section>
@@ -62,4 +54,4 @@
     </div>
   </section>
 
-{% include footer.html js="supabase-client,home-featured-ranking" %}
+{% include footer.html js="supabase-client,home-featured-ranking,home-videos,home-episodes" %}
