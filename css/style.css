@@ -83,7 +83,7 @@ a:hover { color: var(--red); }
   text-decoration: none;
 }
 
-.site-logo img { height: 42px; width: auto; display: block; }
+.site-logo img { height: 56px; width: auto; display: block; }
 .site-logo span { color: var(--marigold); }
 
 .site-nav { display: flex; gap: 0.5rem; }
@@ -160,7 +160,7 @@ a:hover { color: var(--red); }
 
 .hero-badge img {
   width: 100%;
-  max-width: 290px;
+  max-width: 400px;
   height: auto;
   filter: drop-shadow(8px 10px 0 rgba(0,0,0,0.3));
 }
@@ -328,7 +328,7 @@ a.card:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-hover)
 
 @media (max-width: 760px) {
   .hero .wrap { grid-template-columns: 1fr; }
-  .hero-badge img { max-width: 190px; }
+  .hero-badge img { max-width: 240px; }
   .site-nav { display: none; }
   .admin-shell { flex-direction: column; }
   .admin-sidebar { width: auto; display: flex; overflow-x: auto; border-right: none; border-bottom: var(--border); }
