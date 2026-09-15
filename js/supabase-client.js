@@ -1,11 +1,5 @@
----
----
-// Loaded via the Supabase CDN script tag (see admin pages) before this file runs.
-// Fill these in per environment — use the PROD project's URL/key on the prod
-// GitHub Pages site, and the DEV project's on the dev site. Never put the
-// service_role key here — only the public anon key belongs in client code.
-const SUPABASE_URL = "https://YOUR-PROJECT.supabase.co";
-const SUPABASE_ANON_KEY = "YOUR-ANON-KEY";
+const SUPABASE_URL = "https://grutacatrscglmhbkalc.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdydXRhY2F0cnNjZ2xtaGJrYWxjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0NzI1NTksImV4cCI6MjEwNTA0ODU1OX0.DeL34T6qKr8Zk1B9hkIu30cUNsM3tMHOvd0rfP6LyRw";
 
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
