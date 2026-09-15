@@ -7,11 +7,11 @@ const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 // youtube_playlist_id: the "list=" value from the playlist's YouTube URL
 // slug: used in the page URL, e.g. /videos/?playlist=reviews
 const PLAYLISTS = [
-  { name: "Reviews", slug: "reviews", youtube_playlist_id: "REPLACE_ME_1" },
-  { name: "Playthroughs", slug: "playthroughs", youtube_playlist_id: "REPLACE_ME_2" },
-  { name: "Top 10s", slug: "top-10s", youtube_playlist_id: "REPLACE_ME_3" },
-  { name: "News & Announcements", slug: "news", youtube_playlist_id: "REPLACE_ME_4" },
-  { name: "Podcast Clips", slug: "podcast-clips", youtube_playlist_id: "REPLACE_ME_5" },
+  { name: "Playing Through Our Collection", slug: "collection", youtube_playlist_id: "PLvXaqk77iP-B1CZa07E4vjJtsY-gmQYFX" },
+  { name: "Rules Breakdowns", slug: "rules", youtube_playlist_id: "PLvXaqk77iP-BbnNHMo-KGEkyOpKUudVwv" },
+  { name: "Top 10s", slug: "top-10s", youtube_playlist_id: "PLvXaqk77iP-ARODxozge33ZTGSq0cyAsU" },
+  { name: "Playthroughs", slug: "playthroughs", youtube_playlist_id: "PLvXaqk77iP-CpQCZBaQz7CKPZrTX3uFFJ" },
+  { name: "Game Reviews", slug: "reviews", youtube_playlist_id: "PLvXaqk77iP-BSL-oZLPqthROiP8q-HGUz" },
 ];
 
 function supabaseHeaders(returnRepresentation = false) {
