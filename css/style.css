@@ -245,6 +245,36 @@ a.card:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-hover)
 .card[data-type="podcast"] .meta { background: var(--red); }
 .card[data-type="ranking"] .meta { background: var(--marigold); color: var(--ink); }
 
+/* Cards with a thumbnail image (videos, episodes) */
+.card-media { padding: 0; overflow: hidden; }
+
+.card-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: var(--border);
+  background: var(--parchment-soft);
+}
+
+.card-media .card-body { padding: 1.1rem 1.25rem 1.25rem; }
+.card-media .meta { top: -0.9rem; left: 1.1rem; }
+
+/* Playlist filter tabs */
+.tab-btn {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.5rem 1rem;
+  border: var(--border);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.tab-btn.active { background: var(--blue); color: #fff; }
+
 /* ---- Footer ---- */
 .site-footer {
   color: #d8d1bf;

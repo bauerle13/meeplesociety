@@ -13,9 +13,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   el.innerHTML = data.map((v) => `
-    <a class="card" data-type="video" href="https://www.youtube.com/watch?v=${encodeURIComponent(v.youtube_id)}" target="_blank" rel="noopener">
+    <a class="card card-media" data-type="video" href="https://www.youtube.com/watch?v=${encodeURIComponent(v.youtube_id)}" target="_blank" rel="noopener">
       <div class="meta">Video</div>
-      <h3>${escapeHtml(v.title)}</h3>
+      ${v.thumbnail_url ? `<img class="card-thumb" src="${escapeHtml(v.thumbnail_url)}" alt="">` : ""}
+      <div class="card-body">
+        <h3>${escapeHtml(v.title)}</h3>
+      </div>
     </a>
   `).join("");
 });

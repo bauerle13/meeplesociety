@@ -1,0 +1,14 @@
+---
+permalink: /videos/
+---
+{% include header.html title="Videos" %}
+  <section class="section">
+    <div class="wrap">
+      <h1>Videos</h1>
+      <div id="playlist-tabs" style="display:flex; gap:0.5rem; flex-wrap:wrap; margin: 1.5rem 0 2rem;"></div>
+      <div class="card-grid" id="videos-grid">
+        <div class="card"><p>Loading…</p></div>
+      </div>
+    </div>
+  </section>
+{% include footer.html js="supabase-client,videos-page" %}
