@@ -1,21 +1,10 @@
 title: The Meeple Society
 description: Board game rankings, reviews, and a podcast.
 
-# Leave blank for the PROD site (served at the domain root).
-# The DEV repo's own _config.yml should override this to "/your-dev-repo-name"
-# if the dev site is served at username.github.io/repo-name/ rather than a
-# custom domain. Every internal link and asset path in the templates uses
-# the `relative_url` filter, which prepends this automatically.
-baseurl: ""
+baseurl: "meeplesociety"
 
-# No theme, no _layouts — pages include header.html / footer.html directly.
 markdown: kramdown
 plugins: []
-
-# All page files live flat at the repo root (not one-folder-per-page).
-# Pretty URLs still work: each page sets its own `permalink:` in its front
-# matter, e.g. rankings.html has `permalink: /rankings/`. If you add a new
-# page, follow that same pattern.
 
 exclude:
   - README.md
