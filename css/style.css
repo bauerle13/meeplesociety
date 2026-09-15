@@ -103,10 +103,27 @@ a:hover { color: var(--red); }
 .hero {
   color: var(--parchment);
   padding: 4.5rem 0 4rem;
+  position: relative;
+}
+
+.hero .wrap {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 2.5rem;
   align-items: center;
+}
+
+/* Scalloped card-edge divider, echoing the badge's scalloped top */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 22px;
+  background-image: radial-gradient(circle at 11px 0, transparent 11px, var(--parchment) 11.5px);
+  background-size: 22px 22px;
+  background-repeat: repeat-x;
 }
 
 .hero h1 { color: var(--parchment); max-width: 13ch; }
@@ -168,6 +185,20 @@ a:hover { color: var(--red); }
   color: var(--ink);
 }
 .section-head a:hover { color: var(--red); }
+
+.section-head h2 { display: flex; align-items: center; gap: 0.65rem; }
+
+.section-head h2::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: var(--blue);
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  display: inline-block;
+  transform: rotate(15deg);
+  flex-shrink: 0;
+}
 
 .card-grid {
   display: grid;
@@ -296,7 +327,7 @@ a.card:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-hover)
 .error-text { color: var(--red); font-size: 0.85rem; margin-top: 0.5rem; font-weight: 700; }
 
 @media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; }
+  .hero .wrap { grid-template-columns: 1fr; }
   .hero-badge img { max-width: 190px; }
   .site-nav { display: none; }
   .admin-shell { flex-direction: column; }
