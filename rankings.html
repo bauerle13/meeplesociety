@@ -1,0 +1,14 @@
+---
+permalink: /rankings/
+---
+{% include header.html title="Rankings" %}
+  <section class="section">
+    <div class="wrap">
+      <h1>Rankings</h1>
+      <p>Every ranked list we've published, most recent first.</p>
+      <div class="card-grid" id="rankings-list" style="margin-top:2rem;">
+        <div class="card"><p>Loading rankings…</p></div>
+      </div>
+    </div>
+  </section>
+{% include footer.html js="supabase-client,rankings-list" %}

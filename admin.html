@@ -1,0 +1,52 @@
+---
+permalink: /admin/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin dashboard · The Meeple Society</title>
+  <link rel="stylesheet" href="{{ "/css/style.css" | relative_url }}">
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="site-logo" style="margin-bottom:1.5rem; display:block;">Meeple <span>Admin</span></div>
+      <a href="{{ "/admin/" | relative_url }}" class="active">Dashboard</a>
+      <a href="{{ "/admin/rankings-admin/" | relative_url }}">Rankings builder</a>
+      <a href="{{ "/admin/posts-admin/" | relative_url }}">Posts</a>
+      <a href="{{ "/admin/reviews-admin/" | relative_url }}">Reviews &amp; places</a>
+      <a href="{{ "/admin/tracker-admin/" | relative_url }}">Play tracker</a>
+      <a href="#" onclick="signOut(); return false;">Log out</a>
+    </aside>
+    <main class="admin-main">
+      <h2>Dashboard</h2>
+      <p>Welcome back. Pick a section from the sidebar to get started.</p>
+      <div class="card-grid" style="margin-top:2rem;">
+        <div class="card">
+          <div class="meta">Rankings</div>
+          <h3>Build a ranking</h3>
+          <p>Create or edit a ranked list of games.</p>
+        </div>
+        <div class="card">
+          <div class="meta">Posts</div>
+          <h3>Write a post</h3>
+          <p>Publish an update, article, or announcement.</p>
+        </div>
+        <div class="card">
+          <div class="meta">Reviews</div>
+          <h3>Add a store or cafe</h3>
+          <p>Log a place and write a review.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="{{ "/js/supabase-client.js" | relative_url }}"></script>
+  <script>
+    requireAdmin();
+  </script>
+</body>
+</html>
