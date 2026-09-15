@@ -1,4 +1,4 @@
-const HOME_VIDEO_LIMIT = 6;
+const HOME_VIDEO_LIMIT = 8;
 
 document.addEventListener("DOMContentLoaded", async () => {
   const tabsEl = document.getElementById("home-playlist-tabs");

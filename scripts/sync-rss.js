@@ -26,12 +26,15 @@ async function main() {
   const rawItems = feed.rss?.channel?.item;
   const items = Array.isArray(rawItems) ? rawItems : [rawItems].filter(Boolean);
 
+  const channelImage = feed.rss?.channel?.image?.url || feed.rss?.channel?.["itunes:image"]?.["@_href"] || null;
+
   const episodes = items
     .map((item) => ({
       guid: typeof item.guid === "object" ? item.guid["#text"] : item.guid,
       title: typeof item.title === "object" ? item.title["#text"] : item.title,
       audio_url: item.enclosure?.["@_url"] || null,
       description: typeof item.description === "string" ? item.description : (item.description?.["#text"] || null),
+      thumbnail_url: item["itunes:image"]?.["@_href"] || channelImage,
       published_at: item.pubDate ? new Date(item.pubDate).toISOString() : null,
     }))
     .filter((ep) => ep.guid && ep.audio_url);
