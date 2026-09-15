@@ -1,0 +1,12 @@
+title: The Meeple Society
+description: Board game rankings, reviews, and a podcast.
+
+# No theme, no _layouts — pages include header.html / footer.html directly.
+# Keeps GitHub Pages' built-in Jekyll processing (for {% include %}) without
+# any of Jekyll's default styling or layout system.
+markdown: kramdown
+plugins: []
+
+exclude:
+  - README.md
+  - supabase/

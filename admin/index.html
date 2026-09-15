@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin dashboard · The Meeple Society</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="site-logo" style="margin-bottom:1.5rem; display:block;">Meeple <span>Admin</span></div>
+      <a href="index.html" class="active">Dashboard</a>
+      <a href="rankings-admin.html">Rankings builder</a>
+      <a href="posts-admin.html">Posts</a>
+      <a href="reviews-admin.html">Reviews &amp; places</a>
+      <a href="tracker-admin.html">Play tracker</a>
+      <a href="#" onclick="signOut(); return false;">Log out</a>
+    </aside>
+    <main class="admin-main">
+      <h2>Dashboard</h2>
+      <p>Welcome back. Pick a section from the sidebar to get started.</p>
+      <div class="card-grid" style="margin-top:2rem;">
+        <div class="card">
+          <div class="meta">Rankings</div>
+          <h3>Build a ranking</h3>
+          <p>Create or edit a ranked list of games.</p>
+        </div>
+        <div class="card">
+          <div class="meta">Posts</div>
+          <h3>Write a post</h3>
+          <p>Publish an update, article, or announcement.</p>
+        </div>
+        <div class="card">
+          <div class="meta">Reviews</div>
+          <h3>Add a store or cafe</h3>
+          <p>Log a place and write a review.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-client.js"></script>
+  <script>
+    requireAdmin();
+  </script>
+</body>
+</html>

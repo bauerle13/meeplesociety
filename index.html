@@ -1,0 +1,73 @@
+---
+---
+{% include header.html title="Home" %}
+
+  <section class="hero">
+    <div class="wrap" style="display:contents;">
+      <div>
+        <h1>Board games, taken seriously. Table optional.</h1>
+        <p>Rankings, reviews, and a podcast from people who'd rather be shuffling a deck than doing almost anything else.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="rankings.html">See the rankings</a>
+          <a class="btn btn-outline" href="links.html">Watch &amp; listen</a>
+        </div>
+      </div>
+      <div class="shelf">
+        <div class="spine">CO-OP</div>
+        <div class="spine">ENGINE</div>
+        <div class="spine">PARTY</div>
+        <div class="spine">DRAFT</div>
+        <div class="spine">2P</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Latest from the channel</h2>
+        <a href="links.html">All videos →</a>
+      </div>
+      <div class="card-grid" id="latest-videos">
+        <div class="card">
+          <div class="meta">Video</div>
+          <h3>New episodes sync here automatically</h3>
+          <p>This grid will populate from the YouTube sync job once it's wired up to Supabase.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Podcast — recent episodes</h2>
+        <a href="links.html">All episodes →</a>
+      </div>
+      <div class="card-grid" id="latest-episodes">
+        <div class="card">
+          <div class="meta">Episode</div>
+          <h3>RSS feed will populate this section</h3>
+          <p>Pulled in on a schedule from the show's podcast feed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Featured ranking</h2>
+        <a href="rankings.html">All rankings →</a>
+      </div>
+      <div class="card-grid" id="featured-ranking">
+        <div class="card">
+          <div class="meta">Ranking</div>
+          <h3>Rankings built in the admin dashboard show up here</h3>
+          <p>Once the rankings builder is live, the most recent published list appears on the homepage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% include footer.html %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if include.title %}{{ include.title }} · The Meeple Society{% else %}The Meeple Society{% endif %}</title>
+  <meta name="description" content="{% if include.description %}{{ include.description }}{% else %}Board game rankings, reviews, and a podcast for people who'd rather be at the table.{% endif %}">
+  <link rel="stylesheet" href="css/style.css">
+  {% if include.css %}
+    {% assign sheets = include.css | split: "," %}
+    {% for sheet in sheets %}
+      <link rel="stylesheet" href="css/{{ sheet }}.css">
+    {% endfor %}
+  {% endif %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-logo" href="index.html">The Meeple <span>Society</span></a>
+      <nav class="site-nav">
+        <a href="rankings.html">Rankings</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="map.html">Map</a>
+        <a href="links.html">Links</a>
+      </nav>
+    </div>
+  </header>
